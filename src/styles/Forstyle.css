@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  color: #ccc;
+}
+
+.forstyle-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(AA.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 140px auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 25px 30px;
+}
+
+.whole {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 8px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whole .title {
+  line-height: 80px;
+  font-size: 29px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  padding: 0;
+  cursor: default;
+}
+
+.title span {
+  filter: drop-shadow(5px 3px 2px rgba(0, 0, 0, 0.25));
+}
+
+.whole form {
+  padding: 30px 20px 25px 25px;
+}
+
+form p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.for {
+  color: #fff;
+}
+
+.whole form .row {
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.whole form .row input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #eee8e8;
+  padding: 0 10px 0 50px; /* Add left padding for the icon */
+  outline: none; /* Remove outline on focus */
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px; /* Adjust the left position to your liking */
+  top: 50%;
+  transform: translateY(-50%); /* Center the icon vertically */
+  color: #fff; /* Icon color */
+  font-size: 18px; /* Adjust the icon size */
+  pointer-events: none; /* Allow clicks on input field */
+}
+
+.whole form .row i {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px 0 0 5px;
+}
+
+.whole form .botton input {
+  height: 100%;
+  width: 100%;
+  margin-top: 20px;
+  text-align: left;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: white; /* Change this to your desired color */
+  opacity: 0.7; /* Optional: Adjust opacity for a lighter effect */
+}
+
+.whole form .botton input:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  border-color: #fff;
+}
+
+.whole form .signup_link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 40px 0 15px;
+}
+
+.whole form .signup_link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.whole form .signup_link a:hover {
+  text-decoration: underline;
+}
+
+.forhead {
+  color: #eee8e8;
+}

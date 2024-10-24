@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(/Min\ BLK.webp);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+nav {
+  display: flex;
+  padding: 2% 2%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  align-items: left;
+  width: 280px;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 12px 15px;
+  position: relative;
+}
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+.text-box {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 35px;
+}
+.text-box p {
+  color: #fff;
+  margin: 10px 0 40px;
+  font-size: 20px;
+}
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 17px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.hero-btn:hover {
+  border: 1px solid #afa778;
+  background: #afa778;
+  transition: 1s;
+}
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    background: #afa778;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: 0;
+    text-align: left;
+    z-index: 2;
+  }
+}
+.posts {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+p {
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+.row {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.post-col {
+  flex-basis: 35%;
+  background: #a9b3ba;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 30px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: 0.5s;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.post-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0.2, 0.4);
+}
+@media (max-width: 700) {
+  .row {
+    flex-direction: column;
+  }
+}
+.About {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+.about-col {
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+about-col img {
+  width: 100%;
+}
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.layer:hover {
+  background: rgba(89, 95, 99, 0.473);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+.layer h3 {
+  width: 100%;
+  font-weight: 750;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+<!------About Us ------ > .AboutUs {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+.aboutus-col {
+  flex-basis: 99%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: #a9b3ba;
+  padding: 20px 20px;
+}
+.footer {
+  text-align: center;
+  background-color: #93ace9;
+  padding: 10px 10px;
+}
+.build {
+  color: #fff;
+}
+
+h3,
+h5 {
+  color: black;
+}
+
+h1 {
+  color: black;
+}
+.logout-btn {
+  background-color: transparent; /* Makes the background transparent */
+  border: none; /* Removes the border */
+  color: #fff; /* Sets the text color */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  font-size: 12px; /* Optional: Adjust the font size */
+  cursor: pointer; /* Pointer cursor */
+  outline: none; /* Removes the focus outline */
+}
+
+pre {
+  color: black;
+  display: block;
+  unicode-bidi: isolate;
+  white-space: pre;
+  margin: 1em 0px;
+}
+
+.icons {
+  color: black;
+  display: block;
+}
+
+.icons i {
+  color: black; /* Set the color to black */
+  font-size: 24px; /* Adjust the size of the icons */
+  margin: 0 15px; /* Add horizontal space between the icons */
+}

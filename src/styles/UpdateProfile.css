@@ -1,0 +1,65 @@
+.update-profile-wrapper {
+  display: flex; /* Enable flex layout */
+  height: 100vh; /* Take full viewport height */
+}
+
+.sidebar {
+  width: 200px; /* Set a fixed width for the sidebar */
+  background-color: #333; /* Dark gray background */
+  color: #fff; /* White text */
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: #444;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  margin-top: 50px;
+  background-color: #007bff; /* Highlight active or hover state */
+}
+
+.update-profile-container {
+  flex: 1; /* Take up the rest of the space */
+  background-color: #333; /* Dark gray background */
+  color: #fff; /* White text color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.update-profile-container input,
+.update-profile-container button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.update-profile-container input:hover,
+.update-profile-container button:hover {
+  background-color: #555;
+}
+
+.update-profile-container .button input {
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.update-profile-container .button input:hover {
+  background-color: #0056b3;
+}

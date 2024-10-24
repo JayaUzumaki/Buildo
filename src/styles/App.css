@@ -1,0 +1,77 @@
+/* Specific styling for the home page */
+.home-container {
+  background-color: white; /* Set background color for home page */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Vertical stacking */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+/* Navigation styling */
+.navbar {
+  display: flex; /* Flexbox layout for navbar */
+  justify-content: space-between; /* Space links evenly */
+  padding: 20px; /* Padding around navbar */
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  width: 100%; /* Full width */
+  position: absolute; /* Fixed at the top */
+  top: 0; /* Align to the top */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.navbar a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin: 0 1px; /* Spacing between links */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.navbar button {
+  background-color: transparent; /* Transparent background for button */
+  border: none; /* No border */
+  color: white; /* Button text color */
+  cursor: pointer; /* Pointer on hover */
+}
+
+.navbar button:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Centered text styling for the home page */
+.home-container h1 {
+  font-size: 36px; /* Font size */
+  color: #333; /* Text color */
+  margin-top: 0; /* Remove top margin */
+}
+
+.back-nav {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.back-nav button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-arrow {
+  margin-right: 8px; /* Add space between arrow and "Home" text */
+  font-size: 24px; /* Adjust size of the arrow */
+}
+
+.back-nav button:hover {
+  color: #007bff; /* Change color on hover (optional) */
+}
