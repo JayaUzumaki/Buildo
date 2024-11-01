@@ -39,18 +39,8 @@ export default function App() {
       ? "forum-body" // Add custom class for the Forum page
       : "";
 
-  const showBackButton = location.pathname !== "/";
-
   return (
     <div className={bodyClass}>
-      {showBackButton && (
-        <div className="back-nav">
-          <button onClick={() => navigate("/")}>
-            <i className="fa fa-arrow-left back-arrow"></i>
-          </button>
-        </div>
-      )}
-
       <Routes>
         <Route path="/" element={<BuildO />} />
         <Route path="/login" element={<Login />} />

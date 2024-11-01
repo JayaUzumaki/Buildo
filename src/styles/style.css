@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(AA.jpg) no-repeat;
+  background: url(/Min\ BLK.webp) no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -138,4 +138,13 @@ label {
 
 .loginhead {
   color: #ffffff;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 280px;
+  cursor: pointer; /* Change cursor on hover */
+  margin: 1% 1%;
 }

@@ -1,10 +1,11 @@
 import React, { useState } from "react"; // Import React
 import { usePocket } from "./context/PocketContext"; // Ensure you have this context
-import { useNavigate } from "react-router-dom"; // For navigation
+import { useNavigate, Link } from "react-router-dom"; // For navigation
 import "./styles/Regstyle.css"; // Adjust the path if needed
+import logo from "/BLK_BUI-removebg-preview.png"; // Import logo
 
 export default function Signup() {
-  const [username, setUserName] = useState(""); // Fixed variable name to username
+  const [username, setUsername] = useState(""); // Fixed variable name to username
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -40,63 +41,69 @@ export default function Signup() {
   };
 
   return (
-    <div className="container1">
-      <center>
-        <div className="title">Sign up</div>
-      </center>
-      <div className="content">
-        <form onSubmit={handleSignup}>
-          <div className="user-details">
-            <div className="input-box">
-              <span className="details">UserName</span>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                value={username}
-                onChange={(e) => setUserName(e.target.value)} // Changed variable name to username
-                required
-              />
+    <div className="regstyle-body">
+      {/* Logo at the top left corner */}
+      <Link to="/">
+        <img src={logo} alt="Logo" className="logo" />
+      </Link>
+      <div className="container1">
+        <center>
+          <div className="title">Sign up</div>
+        </center>
+        <div className="content">
+          <form onSubmit={handleSignup}>
+            <div className="user-details">
+              <div className="input-box">
+                <span className="details">UserName</span>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)} // Use the correct variable name
+                  required
+                />
+              </div>
+              <div className="input-box">
+                <span className="details">Email</span>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="input-box">
+                <span className="details">Password</span>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="input-box">
+                <span className="details">Confirm Password</span>
+                <input
+                  type="password"
+                  placeholder="Confirm your password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </div>
             </div>
-            <div className="input-box">
-              <span className="details">Email</span>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+            <div className="register-link">
+              <p className="sign">
+                Already have an account? <Link to="/login">Login</Link>
+              </p>
             </div>
-            <div className="input-box">
-              <span className="details">Password</span>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+            <div className="button">
+              <input type="submit" value="Register" />
             </div>
-            <div className="input-box">
-              <span className="details">Confirm Password</span>
-              <input
-                type="password"
-                placeholder="Confirm your password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div className="register-link">
-            <p className="sign">
-              Already have an account? <a href="/login">Login</a>
-            </p>
-          </div>
-          <div className="button">
-            <input type="submit" value="Register" />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

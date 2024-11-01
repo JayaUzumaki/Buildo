@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
-  color: #ccc;
+  font-family: "Poppins", sans-serif;
 }
 
 .forstyle-body {
@@ -13,139 +12,112 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(AA.jpg) no-repeat;
+  background: url(/Min\ BLK.webp) no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .container {
-  max-width: 600px;
-  margin: 140px auto;
+  width: 600px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   color: #fff;
   border-radius: 10px;
-  padding: 25px 30px;
+  padding: 30px 40px;
 }
 
-.whole {
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 8px 5px 15px rgba(0, 0, 0, 0.2);
+.form {
+  width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 40px;
+  color: #ffffff;
 }
 
-.whole .title {
-  line-height: 80px;
-  font-size: 29px;
-  font-weight: 700;
+.forehead {
+  font-size: 36px;
   text-align: center;
-  border-radius: 5px 5px 0 0;
-  padding: 0;
-  cursor: default;
-}
-
-.title span {
-  filter: drop-shadow(5px 3px 2px rgba(0, 0, 0, 0.25));
-}
-
-.whole form {
-  padding: 30px 20px 25px 25px;
-}
-
-form p {
-  font-size: 13px;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
-.for {
-  color: #fff;
-}
-
-.whole form .row {
-  height: 45px;
-  margin-bottom: 15px;
+.input-box {
   position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
 }
 
-.whole form .row input {
-  height: 100%;
+.input-box input {
   width: 100%;
+  height: 100%;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
-  font-size: 16px;
-  color: #eee8e8;
-  padding: 0 10px 0 50px; /* Add left padding for the icon */
-  outline: none; /* Remove outline on focus */
-}
-
-.input-icon {
-  position: absolute;
-  left: 15px; /* Adjust the left position to your liking */
-  top: 50%;
-  transform: translateY(-50%); /* Center the icon vertically */
-  color: #fff; /* Icon color */
-  font-size: 18px; /* Adjust the icon size */
-  pointer-events: none; /* Allow clicks on input field */
-}
-
-.whole form .row i {
-  position: absolute;
-  width: 40px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 5px 0 0 5px;
-}
-
-.whole form .botton input {
-  height: 100%;
-  width: 100%;
-  margin-top: 20px;
-  text-align: left;
-  background: #fff;
-  border: none;
   outline: none;
+  color: #eee8e8;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.input-box input::placeholder {
+  color: #eee8e8;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #ffffff;
+  border: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-size: 16px;
   color: #333;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-input::placeholder {
-  color: white; /* Change this to your desired color */
-  opacity: 0.7; /* Optional: Adjust opacity for a lighter effect */
+.btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
 }
 
-.whole form .botton input:hover {
-  background: rgba(255, 255, 255, 0.5);
-  color: #fff;
-  border-color: #fff;
-}
-
-.whole form .signup_link {
-  font-size: 14.5px;
+.error-message {
+  color: #ff6b6b;
   text-align: center;
-  margin: 40px 0 15px;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
-.whole form .signup_link a {
-  color: #fff;
-  text-decoration: none;
+.success-message {
+  color: #a1ff6b;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #ffffff;
+  text-decoration: underline;
   font-weight: 600;
 }
 
-.whole form .signup_link a:hover {
-  text-decoration: underline;
-}
-
-.forhead {
-  color: #eee8e8;
+.register-link a:hover {
+  text-decoration: none;
 }
