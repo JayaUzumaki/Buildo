@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { usePocket } from "./context/PocketContext"; // Use the PocketContext
 import "./styles/style.css"; // Ensure the path is correct
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
+import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import logo from "/BLK_BUI-removebg-preview.png"; // Adjust the path as necessary
 
 export default function Login() {
@@ -42,6 +44,7 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            <FontAwesomeIcon icon={faUser} className="icon" />
           </div>
           <div className="input-box">
             <input
@@ -51,19 +54,21 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <FontAwesomeIcon icon={faLock} className="icon" />
           </div>
           <div className="remember-forget">
             <label>
-              <input type="checkbox" /> Remember me
+              <input type="checkbox" />
+              Remember me
             </label>
-            <Link to="/forgot-password">Forgot password?</Link>
+            <Link to="/forgot-password">Forget Password?</Link>
           </div>
           <button type="submit" className="btn">
             Login
           </button>
           <div className="register-link">
-            <p>
-              Don't have an account? <Link to="/Signup">Register</Link>
+            <p className="acc">
+              Don't have an account? <Link to="/signup">Signup</Link>
             </p>
           </div>
         </form>
