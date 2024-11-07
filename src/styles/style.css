@@ -83,7 +83,7 @@
 .remember-forget a {
   color: #fff;
   text-decoration: none;
-  margin-top: 20px;
+  margin: 10px;
 }
 .remember-forget a:hover {
   text-decoration: underline;

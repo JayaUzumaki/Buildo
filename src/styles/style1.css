@@ -1,4 +1,12 @@
+/* styles/style1.css */
+
+/* General page styles */
 /* Form Container */
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .forum-form {
   display: flex;
   flex-direction: column;
@@ -35,7 +43,7 @@
 
 /* Button styling */
 .forum-form button {
-  background-color: #007bff;
+  background: transparent;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -47,7 +55,8 @@
 }
 
 .forum-form button:hover {
-  background-color: #0056b3;
+  border: 1px solid #afa778;
+  background: #afa778;
 }
 
 /* Create Forum Button Styling */
@@ -57,28 +66,27 @@
 }
 
 .create-forum-btn {
-  background-color: #007bff; /* Blue color */
+  background: transparent; /* Blue color */
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  display: inline-block; /* Inline and centered */
+  display: flex; /* Inline and centered */
 }
 
 .create-forum-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  border: 1px solid #afa778;
+  background: #afa778;
 }
 
 /* Forum List Container */
 /* Forum Item Styling */
 .forum-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Responsive grid */
+  grid-template-columns: repeat(2, 1fr); /* Responsive grid */
+  grid-template-rows: repeat(4, auto);
   gap: 20px; /* Space between forum items */
   padding: 20px;
 }
@@ -87,7 +95,7 @@
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #333131;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
@@ -98,13 +106,15 @@
 
 .forum-item h3 {
   margin-bottom: 10px;
-  color: #333;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .forum-item p {
   margin: 0;
-  color: #777;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
 }
 
 /* Forum Detail Rectangle */
@@ -120,6 +130,7 @@
 /* Comments Section */
 .comments-section {
   margin-top: 30px;
+  width: 800px;
 }
 
 /* Comments List */
@@ -129,12 +140,16 @@
 }
 
 .comments-section .comment-item {
-  border: 1px solid #ddd; /* Border for each comment */
-  border-radius: 5px; /* Rounded corners for comments */
-  background-color: #f9f9f9; /* Background color */
-  padding: 15px; /* Padding inside the comment box */
-  margin-bottom: 10px; /* Space between comments */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  background: transparent;
+  backdrop-filter: blur(300px);
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 10px 0;
+  min-height: 120px; /* Minimum height to ensure consistent appearance */
+  height: auto; /* Allows height to expand with content */
+  overflow-wrap: break-word; /* Ensures long text wraps within the box */
+  word-break: break-word;
 }
 
 .comments-section li {
@@ -152,10 +167,13 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: black;
+  height: 120px;
+  font-size: large;
 }
 
 .comments-section button {
-  background-color: #007bff;
+  background: transparent;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -164,7 +182,8 @@
 }
 
 .comments-section button:hover {
-  background-color: #0056b3;
+  border: 1px solid #afa778;
+  background: #afa778;
 }
 
 /* Message when not logged in */
@@ -175,7 +194,7 @@
 
 /* Reply Button Styling */
 .reply-button {
-  background-color: #007bff; /* Blue background */
+  background: transparent; /* Blue background */
   color: white; /* White text */
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
@@ -185,7 +204,8 @@
 }
 
 .reply-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  border: 1px solid #afa778;
+  background: #afa778;
 }
 
 /* Title and Description Box */
@@ -215,5 +235,99 @@
 }
 
 .comment-text {
-  color: blue; /* Change this to your desired color */
+  color: #fdd14f;
+  font-weight: bold;
+}
+
+/* Header Section */
+.header .textbox {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Search and Create Forum Section */
+.search-create-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  padding: 10px;
+  width: 60%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.create-forum-btn {
+  background: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 10px;
+  font-weight: bolder;
+}
+
+.create-forum-btn:hover {
+  border: 1px solid #afa778;
+  background: #afa778;
+}
+
+/* Forum Heading Styling */
+.forumhead {
+  text-align: center;
+  font-size: 40px; /* Adjust font size as needed */
+  color: #ffffff;
+  margin-bottom: 30px; /* Decreased bottom margin to move it up */
+}
+
+/* Pagination Controls */
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.pagination-controls button {
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+}
+
+.pagination-controls button:disabled {
+  background-color: #423f3f;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+/* Active page indicator styling */
+.pagination-controls button.active {
+  background-color: #007bff; /* Blue background for active page */
+  color: white; /* White text for active page */
+  border-color: #007bff; /* Match border color */
 }

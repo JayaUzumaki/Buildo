@@ -1,0 +1,76 @@
+/* styles/forumDetail.css */
+
+.forum-detail-page {
+  background-image: url(/Min\ BLK.webp);
+  background-size: cover !important;
+  background-position: center !important;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.detail-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-logo {
+  width: 100px !important;
+  margin: 10px;
+}
+
+.back-link {
+  color: white !important;
+  text-decoration: none !important;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.forum-detail-content {
+  background-color: rgb(131 131 131 / 70%) !important;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.forum-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.forum-author {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.forum-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: aliceblue;
+}
+
+.detail-nav1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 1%;
+}
+
+.comment-author {
+  color: #84c6ff;
+  font-size: larger;
+  font-weight: bolder;
+}

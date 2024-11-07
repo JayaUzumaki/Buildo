@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { usePocket } from "./context/PocketContext";
-import "./styles/style1.css";
+import "./styles/forumdetail.css";
+import logo from "/BLK_BUI-removebg-preview.png";
 
 const ForumDetail = () => {
   const { id } = useParams();
@@ -11,14 +12,17 @@ const ForumDetail = () => {
   const [error, setError] = useState(null);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [isReplying, setIsReplying] = useState(false); // State to control reply input visibility
+  const [isReplying, setIsReplying] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
 
     const fetchForumDetail = async () => {
       try {
-        const detail = await pb.collection("forums").getOne(id);
+        // Expanding the user_id field to get the username directly
+        const detail = await pb.collection("forums").getOne(id, {
+          expand: "user_id",
+        });
         if (isMounted) {
           setForumDetail(detail);
           setLoading(false);
@@ -71,15 +75,13 @@ const ForumDetail = () => {
         forum_id: id,
       });
 
-      // Optimistically update comments state
       setComments((prev) => [
         ...prev,
-        { ...createdComment, username: commentUser }, // Add new comment to state
+        { ...createdComment, username: commentUser },
       ]);
-      setComment(""); // Clear comment input after submission
-      setIsReplying(false); // Reset replying state
+      setComment("");
+      setIsReplying(false);
 
-      // Scroll to comments section after adding a new comment
       document
         .querySelector(".comments-section")
         .scrollIntoView({ behavior: "smooth" });
@@ -90,55 +92,74 @@ const ForumDetail = () => {
   };
 
   const handleReplyClick = () => {
-    setIsReplying(true); // Set replying state to true
+    setIsReplying(true);
   };
 
   if (loading) return <div className="loading">Loading, please wait...</div>;
   if (error) return <div className="error">{error}</div>;
 
   return (
-    <div>
-      <div className="forum-title-desc">
-        <h1 className="forum-title">{forumDetail.title}</h1>
-        <p className="forum-desc">{forumDetail.desc}</p>
+    <div className="forum-detail-page">
+      {/* Navbar with logo and back link */}
+      <nav className="detail-nav1">
+        <Link to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
+        <Link to="/forum" className="back-link">
+          Back to Forums
+        </Link>
+      </nav>
+
+      {/* Forum detail section */}
+      <div className="forum-detail-content">
+        <h1 className="forum-title">{forumDetail?.title}</h1>
+        <p className="forum-author">
+          Posted by {forumDetail?.expand?.user_id?.username || "Anonymous"}
+        </p>
+        <p className="forum-description">{forumDetail?.desc}</p>
       </div>
 
+      {/* Comments section */}
       <div className="comments-section">
-        <h2 style={{ color: "black" }}>Comments</h2>{" "}
-        {/* Corrected inline style */}
-        {/* Show Reply button only if not replying */}
+        <h2 className="comments-heading">Comments</h2>
         {user && !isReplying && (
-          <button onClick={handleReplyClick}>Reply</button>
+          <button className="reply-button" onClick={handleReplyClick}>
+            Reply
+          </button>
         )}
-        {/* Display reply form only if isReplying is true */}
         {isReplying && (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="comment-form">
             <textarea
-              style={{ color: "black" }}
+              className="comment-input"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               placeholder="Write your comment..."
               required
             />
             <div className="reply-actions">
-              <button type="submit">Submit Comment</button>
-              <button type="button" onClick={() => setIsReplying(false)}>
+              <button type="submit" className="submit-comment-button">
+                Submit Comment
+              </button>
+              <button
+                type="button"
+                className="cancel-reply-button"
+                onClick={() => setIsReplying(false)}
+              >
                 Cancel Reply
               </button>
             </div>
           </form>
         )}
-        <ul>
+        <ul className="comments-list">
           {comments.map((comment) => (
-            <li key={comment.id}>
-              <strong style={{ color: "black" }}>
+            <li key={comment.id} className="comment-item">
+              <div className="comment-author">
                 {comment.username ||
                   comment.expand?.user_id?.username ||
                   "Unknown User"}
                 :
-              </strong>{" "}
-              <span className="comment-text">{comment.content}</span>{" "}
-              {/* Apply the comment-text class here */}
+              </div>
+              <span className="comment-text">{comment.content}</span>
             </li>
           ))}
         </ul>

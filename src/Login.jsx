@@ -19,7 +19,7 @@ export default function Login() {
 
     try {
       await login(email, password);
-      navigate("/home"); // Redirect to home page after successful login
+      navigate("/"); // Redirect to home page after successful login
     } catch (error) {
       console.error("Login failed", error);
       setError("Login failed. Please check your credentials.");
@@ -57,11 +57,7 @@ export default function Login() {
             <FontAwesomeIcon icon={faLock} className="icon" />
           </div>
           <div className="remember-forget">
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <Link to="/forgot-password">Forget Password?</Link>
+            <Link to="/forgot-password">Forgot Password?</Link>
           </div>
           <button type="submit" className="btn">
             Login

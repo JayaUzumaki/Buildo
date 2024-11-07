@@ -49,9 +49,8 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/update-profile" element={<UpdateProfile />} />
         <Route path="/configure" element={<Configure />} />
-        <Route path="/forum" element={<Forum />} /> {/* Add the Forum route */}
-        <Route path="/forum/:id" element={<ForumDetail />} />{" "}
-        {/* Add the ForumDetail route */}
+        <Route path="/forum" element={<Forum />} />
+        <Route path="/forum/:id" element={<ForumDetail />} />
       </Routes>
     </div>
   );
