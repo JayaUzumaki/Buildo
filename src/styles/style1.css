@@ -146,9 +146,10 @@
   border: 1px solid white;
   padding: 10px;
   margin: 10px 0;
-  min-height: 120px; /* Minimum height to ensure consistent appearance */
-  height: auto; /* Allows height to expand with content */
-  overflow-wrap: break-word; /* Ensures long text wraps within the box */
+  min-height: 120px; /* Set minimum height */
+  height: auto; /* Enable auto height for dynamic expansion */
+  max-width: 800px;
+  overflow-wrap: break-word; /* Wrap long words to prevent overflow */
   word-break: break-word;
 }
 
@@ -330,4 +331,82 @@
   background-color: #007bff; /* Blue background for active page */
   color: white; /* White text for active page */
   border-color: #007bff; /* Match border color */
+}
+
+/* Modal overlay with blurred background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Above other content */
+  backdrop-filter: blur(8px); /* Blur effect */
+}
+
+/* Modal content box */
+.modal-content {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  position: relative;
+}
+
+/* Close button */
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Form styling in modal */
+.modal-content .forum-form label {
+  display: block;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.modal-content .forum-form input,
+.modal-content .forum-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: black;
+}
+
+/* Make textarea larger */
+.modal-content .forum-form textarea {
+  height: 400px; /* Adjusted height */
+
+  resize: vertical; /* Allow manual resizing */
+}
+
+/* Submit button */
+.modal-content .forum-form button {
+  background: #afa778;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.modal-content .forum-form button:hover {
+  background: #ccba7e;
 }

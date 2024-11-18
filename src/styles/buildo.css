@@ -12,6 +12,8 @@ html {
   background-image: url(/Min\ BLK.webp);
   background-position: center;
   background-size: cover;
+  background-color: #212121; /* Solid background color for areas beyond the image */
+  min-height: 100vh;
   position: relative;
 }
 nav {

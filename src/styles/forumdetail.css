@@ -1,7 +1,9 @@
 /* styles/forumDetail.css */
 
 .forum-detail-page {
-  background-image: url(/Min\ BLK.webp);
+  background: url(/Min\ BLK.webp) center/cover no-repeat, #212121; /* Layer the image on top of a solid color */
+  background-attachment: fixed; /* Optional parallax effect */
+  position: relative;
   background-size: cover !important;
   background-position: center !important;
   color: white;

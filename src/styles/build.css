@@ -1,0 +1,135 @@
+.header1 {
+  /* Full viewport height */
+  width: 100%;
+  background: url(/Min\ BLK.webp) center/cover no-repeat, #212121; /* Layer the image on top of a solid color */
+  background-attachment: fixed; /* Optional parallax effect */
+  position: relative;
+}
+
+.build-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: flex-start; /* Align content to the top */
+  padding: 20px;
+}
+
+.category {
+  margin-bottom: 40px; /* Space between categories */
+}
+
+.category h2 {
+  font-size: 28px; /* Slightly larger font size for category headers */
+  margin-bottom: 15px;
+  text-align: center;
+  color: #ffffff; /* Ensure the header is visible */
+  font-weight: bold;
+}
+
+.category-builds {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Adjust to center builds */
+  gap: 20px;
+  justify-content: center; /* Center builds within the grid */
+  align-items: start; /* Align items to the top of their grid cells */
+  width: 100%;
+  max-width: 1200px; /* Limit the maximum width for better centering */
+  padding: 0 20px;
+}
+
+.build-box {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically (image on top, text below) */
+  width: 100%;
+  max-width: 300px;
+  height: 680px; /* Allow the box to grow with content */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Dark background to enhance readability */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+  overflow: hidden;
+}
+
+.build-box:hover {
+  transform: translateY(-10px); /* Hover effect for the box */
+}
+
+.build-image {
+  width: 100%;
+  height: 300px; /* Set a fixed height for the image */
+  object-fit: cover;
+}
+
+.build-info {
+  padding: 10px;
+  background-color: rgb(
+    219 217 217 / 70%
+  ); /* Dark background for readability */
+  color: white;
+  flex-grow: 1; /* Allow text to fill available space */
+}
+
+.build-info h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.build-description {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.build-price {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .build-box {
+    max-width: 100%; /* Adjust the max width for smaller screens */
+  }
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #212121;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px 20px; /* Balanced padding */
+  gap: 1000px; /* Space between tabs */
+  flex-wrap: wrap; /* Allow tabs to stack on smaller screens */
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  background-color: #333; /* Default tab color */
+  border-radius: 4px; /* Add slight rounding */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #444; /* Slightly lighter on hover */
+}
+
+.tab.active {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold; /* Distinguish active tab */
+}

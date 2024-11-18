@@ -18,8 +18,15 @@ export default function Login() {
     setError(""); // Reset the error state before making the request
 
     try {
-      await login(email, password);
-      navigate("/"); // Redirect to home page after successful login
+      const user = await login(email, password); // Assuming login returns user details
+      const userRole = user.role; // Extract the role from the user object
+
+      // Redirect based on role
+      if (userRole === "admin") {
+        navigate("/report"); // Navigate to the report page for admin
+      } else {
+        navigate("/"); // Navigate to the home page for other users
+      }
     } catch (error) {
       console.error("Login failed", error);
       setError("Login failed. Please check your credentials.");

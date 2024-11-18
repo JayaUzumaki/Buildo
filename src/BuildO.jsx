@@ -23,7 +23,7 @@ const BuildO = () => {
                 {/* Link to the Configurator */}
               </li>
               <li>
-                <a href="#builds">BUILDS</a>
+                <Link to="/build">BUILDS</Link>{" "}
               </li>
               <li>
                 <Link to="/forum">FORUMS</Link> {/* Updated to Link to forum */}

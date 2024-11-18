@@ -15,6 +15,8 @@ import UpdateProfile from "./UpdateProfile";
 import Configure from "./Configure";
 import Forum from "./forum"; // Import the new Forum component
 import ForumDetail from "./ForumDetail"; // Import the new ForumDetail component
+import Build from "./build";
+import GenerateReportModal from "./report";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./styles/App.css";
 import "./styles/Forstyle.css";
@@ -49,8 +51,12 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/update-profile" element={<UpdateProfile />} />
         <Route path="/configure" element={<Configure />} />
+        <Route path="/configure/:buildId" element={<Configure />} />{" "}
+        {/* Populated Configure */}
         <Route path="/forum" element={<Forum />} />
         <Route path="/forum/:id" element={<ForumDetail />} />
+        <Route path="/build" element={<Build />} />
+        <Route path="/report" element={<GenerateReportModal />} />
       </Routes>
     </div>
   );

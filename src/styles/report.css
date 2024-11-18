@@ -1,0 +1,94 @@
+/* Ensure the whole page is covered by the background image */
+.generate-report-container {
+  background-image: url(/Min\ BLK.webp); /* Correct the image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Ensure positioning context for modal */
+  text-align: center; /* Center text */
+}
+
+/* Style for the Generate Report button */
+.generate-report-button {
+  padding: 15px 30px; /* Adjusted for better visibility */
+  font-size: 20px; /* Larger font for better visibility */
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Slightly rounded button */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for the button */
+.generate-report-button:hover {
+  background-color: #45a049;
+  transform: translateY(-5px); /* Button lift on hover */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is above all content */
+}
+
+/* Modal Content */
+.modal-content {
+  background: #333;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px; /* Increased width for better visibility */
+  width: 90%; /* Make the modal responsive */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  animation: fadeIn 0.3s ease-out; /* Animation for modal */
+}
+
+/* Modal heading */
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Larger heading */
+  color: #333; /* Darker color for better contrast */
+}
+
+/* Close button inside the modal */
+.close-modal-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the close button */
+.close-modal-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Modal fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

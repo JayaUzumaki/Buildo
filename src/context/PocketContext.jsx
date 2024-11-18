@@ -23,7 +23,12 @@ const debounce = (func, delay) => {
 };
 
 export const PocketProvider = ({ children }) => {
-  const pb = useMemo(() => new PocketBase(BASE_URL), []);
+  const pb = useMemo(() => {
+    const client = new PocketBase(BASE_URL);
+    client.autoCancellation(false); // Disable auto-cancellation globally
+    return client;
+  }, []);
+
   const [user, setUser] = useState(pb.authStore.model);
   const [isAuthenticated, setIsAuthenticated] = useState(!!user);
   const [isFetching, setIsFetching] = useState(false); // State to track fetching status
@@ -70,7 +75,6 @@ export const PocketProvider = ({ children }) => {
     };
   }, [pb, fetchUserData]);
 
-  // Register function includes username, email, and password
   const register = useCallback(
     async (username, email, password) => {
       try {
@@ -88,13 +92,20 @@ export const PocketProvider = ({ children }) => {
     [pb]
   );
 
-  // Login function
   const login = useCallback(
     async (email, password) => {
       try {
-        await pb.collection("users").authWithPassword(email, password);
+        const authData = await pb
+          .collection("users")
+          .authWithPassword(email, password);
         setIsAuthenticated(true);
-        fetchUserData(); // Fetch user data immediately after login
+        fetchUserData();
+        // Fetch and return user data
+        const userId = authData.record.id;
+        const userData = await pb.collection("users").getOne(userId);
+        setUser(userData);
+        return userData;
+        // Fetch user data immediately after login
       } catch (error) {
         console.error("Login failed", error);
         throw error;
@@ -103,7 +114,6 @@ export const PocketProvider = ({ children }) => {
     [pb, fetchUserData]
   );
 
-  // Logout function
   const logout = async () => {
     try {
       await pb.authStore.clear(); // Clear the auth store
@@ -114,7 +124,6 @@ export const PocketProvider = ({ children }) => {
     }
   };
 
-  // Update email function
   const updateEmail = async (newEmail, currentPassword) => {
     if (!user || !currentPassword || !newEmail) {
       console.log(user, currentPassword, newEmail); // Log to debug
@@ -141,7 +150,6 @@ export const PocketProvider = ({ children }) => {
     }
   };
 
-  // Update password function
   const updatePassword = async (currentPassword, newPassword) => {
     if (!user || !currentPassword || !newPassword) {
       throw new Error("Current password and new password cannot be blank");
@@ -173,7 +181,6 @@ export const PocketProvider = ({ children }) => {
     }
   };
 
-  // Password reset function
   const resetPassword = async (email) => {
     if (!email) {
       throw new Error("Email cannot be blank");
@@ -187,7 +194,6 @@ export const PocketProvider = ({ children }) => {
     }
   };
 
-  // Delete account function
   const deleteAccount = async () => {
     try {
       const userId = user?.id; // Use optional chaining to safely access user.id
@@ -216,13 +222,13 @@ export const PocketProvider = ({ children }) => {
         logout,
         updateEmail,
         updatePassword,
-        resetPassword, // Expose the resetPassword function
-        deleteAccount, // Expose the deleteAccount function
-        fetchUserData, // Expose the fetchUserData function
+        resetPassword,
+        deleteAccount,
+        fetchUserData,
         pb,
         user,
         isAuthenticated,
-        isFetching, // Expose fetching status
+        isFetching,
       }}
     >
       {children}
